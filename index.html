@@ -1,0 +1,168 @@
+<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00ff7f, #00bfff);
+            animation: gradientAnimation 8s ease infinite;
+            background-size: 300% 300%;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-30px) scale(0.9); }
+            50% { opacity: 0.5; transform: translateY(-15px) scale(1.05); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .categories {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, rgba(0, 255, 127, 0.3), rgba(0, 191, 255, 0.15));
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            transform: translateY(-15px) scale(1.15) rotate(1deg);
+            background: linear-gradient(135deg, rgba(0, 255, 127, 0.4), rgba(0, 191, 255, 0.2));
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery {
+            display: none;
+        }
+
+        .testimonials {
+            margin-top: 50px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(0, 191, 255, 0.2));
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonials h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .call-to-action {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #00bfff, #00ff7f);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #00bfff;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        button:hover {
+            background: #00bfff;
+            color: white;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background: #fff;
+            color: #00bfff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project 1 Details</h1>
+    <p>Welcome to the detailed page for Project 1. Here you can find more information about this project.</p>
+
+    <div class="categories">
+        <a href="programming.html" class="category">Programming</a>
+        <div class="category">Web Building</div>
+        <div class="category">Graphic Design</div>
+    </div>
+
+    <div class="testimonials">
+        <h2>What People Say</h2>
+        <div class="testimonial">"This project is amazing! Highly recommend."</div>
+        <div class="testimonial">"A truly outstanding experience working on this."</div>
+        <div class="testimonial">"Innovative and well-executed!"</div>
+    </div>
+
+    <div class="call-to-action">
+        <h2>Get Involved</h2>
+        <p>Want to learn more or collaborate? Click the button below to reach out!</p>
+        <button>Contact Me</button>
+    </div>
+
+    <a href="portfolio.html">Back to Portfolio</a>
+</body>
+</html>
