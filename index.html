@@ -1,0 +1,260 @@
+<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00ff7f, #00bfff, #ff00ff);
+            animation: gradientAnimation 8s ease infinite;
+            background-size: 400% 400%;
+            color: white;
+            text-align: center;
+            overflow: auto; /* Allow scrolling */
+        }
+
+        h1 {
+            font-size: 4em; /* Increase font size for better emphasis */
+            margin-top: 20px;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* Add a stronger shadow for depth */
+            animation: fadeIn 2s ease, typewriter 4s steps(40) 1 normal both;
+            color: #00F8FC; /* Match the hover text color for consistency */
+            font-weight: bold; /* Make the text bold for better visibility */
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #00F8FC;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-30px) scale(0.9); }
+            50% { opacity: 0.5; transform: translateY(-15px) scale(1.05); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .categories {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .category.btn-grad {
+            display: inline-block;
+        }
+
+        .btn-grad {
+            background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD 51%, #4CB8C4 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: background-position 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px rgba(238, 238, 238, 0.5); /* Reduced opacity for a more transparent shadow */
+            border-radius: 10px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-grad::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-45deg);
+            transition: left 0.5s;
+        }
+
+        .btn-grad:hover::before {
+            left: 100%;
+        }
+
+        .btn-grad:hover {
+            background-position: right center;
+            color: #00F8FC; /* Change text color to the new teal shade on hover */
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Reduced opacity for hover shadow */
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+        }
+
+        .gallery {
+            display: none;
+        }
+
+        .testimonials {
+            margin-top: 50px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(0, 191, 255, 0.2));
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonials h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .call-to-action {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #00bfff, #00ff7f);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #00bfff;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        button:hover {
+            background: #00bfff;
+            color: white;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background: #fff;
+            color: #00bfff;
+        }
+
+        /* Particle Effects */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Explore my work and projects in Programming, Web Building, and Graphic Design.</p>
+
+    <div class="categories">
+        <a href="programming.html" class="category btn-grad">Programming</a>
+        <a href="web-building.html" class="category btn-grad">Web Building</a>
+        <a href="graphic-design.html" class="category btn-grad">Graphic Design</a>
+    </div>
+
+    <div class="about">
+        <h2>Hello! I'm a versatile developer and digital creator specializing in Python programming, website design, and graphic design.</h2>
+        <p>Whether you're a business, an individual, or a creative project leader — I provide tailored tech solutions and stunning visuals that get results.</p>
+
+        <h3>🐍 Programming Services</h3>
+        <ul>
+            <li><strong>Facial Recognition Systems</strong> – Custom AI for identification and security.</li>
+            <li><strong>Product Calculators</strong> – Interactive, dynamic tools for pricing and configuration.</li>
+            <li><strong>Locally Run AI Models</strong> – Standard and customized machine learning models, fully offline for privacy and control.</li>
+        </ul>
+
+        <h3>🌐 Web Design</h3>
+        <p>Need a sleek, functional website? I design:</p>
+        <ul>
+            <li>Professional Portfolio Sites</li>
+            <li>Business Information Pages</li>
+            <li>Custom Product Calculators</li>
+        </ul>
+        <p>All optimized for performance, responsiveness, and clarity.</p>
+
+        <h3>🎨 Graphic Design</h3>
+        <p>Creativity meets functionality. I craft:</p>
+        <ul>
+            <li>Logos & Brand Assets</li>
+            <li>Game Graphics & UI Elements</li>
+            <li>Fliers, Apparel Designs, & More</li>
+        </ul>
+        <p>Each design is made to capture attention and represent your vision with precision.</p>
+
+        <h3>📬 Let’s build something great together.</h3>
+        <p>Whether you need custom software, a sharp online presence, or bold visuals — I’ve got the tools and the passion to deliver.</p>
+    </div>
+
+    <div class="call-to-action">
+        <h2>Get Involved</h2>
+        <p>Want to learn more or collaborate? Click the button below to reach out!</p>
+        <button>Contact Me</button>
+    </div>
+
+    <a href="portfolio.html">Back to Portfolio</a>
+    <script src="particles.js"></script>
+</body>
+</html>
